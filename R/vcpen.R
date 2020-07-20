@@ -86,7 +86,7 @@ vcpen <- function(y, X, Kerns, frac1=0.8, lambda_factor=NULL, lambda_grid=NULL,
 
   ## define eps for deciding non-zero VCs
   eps <- .001
-  npar <- apply(fit$vc_grid[,-1] >  eps, 1, sum) + apply(fit$beta_grid> eps, 2, sum)
+  npar <- apply(fit$vc_grid[,-1] >  eps, 1, sum) + apply(abs(fit$beta_grid) > eps, 2, sum)
   bic_grid <- as.vector(-2*fit$logl_grid+ log(fit$n_subj)*npar)
 
   index <- 1:length(bic_grid)

@@ -1,10 +1,10 @@
-cef4b9f3094aa2a2a7a6aef5ea79b406 *DESCRIPTION
+3ae08441a7e9bc4e8624b89e65ac40e5 *DESCRIPTION
 0bc5016d2682b3fff3456aa8c5d98488 *NAMESPACE
 5ab980bea2f4624d38e347f601aeef6b *R/RcppExports.R
 1b95ba428bed238177dd7fb0e62b64c3 *R/kernel_linear.R
 b37a23135f69fe456a1c469ba60c7cf8 *R/minque.R
 c1f351265f2a7f68b2a977778a358a72 *R/vcexample.R
-24fa45e4f073fcdcc6158bc028b9b54a *R/vcpen.R
+65cf76d611b6934b88d39e8b3cdc1b42 *R/vcpen.R
 3aa3fd46cbae4080bbf9653f2554ed8c *README.md
 56737addebea530c794f071da1644b19 *build/vignette.rds
 6e5c00567e0b2ad2f0688b823dc33358 *data/vcexample.RData
