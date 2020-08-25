@@ -1,4 +1,4 @@
-3ae08441a7e9bc4e8624b89e65ac40e5 *DESCRIPTION
+8bcaae7bacc26a972ad586a448b2bc37 *DESCRIPTION
 0bc5016d2682b3fff3456aa8c5d98488 *NAMESPACE
 5ab980bea2f4624d38e347f601aeef6b *R/RcppExports.R
 1b95ba428bed238177dd7fb0e62b64c3 *R/kernel_linear.R
@@ -11,7 +11,7 @@ c1f351265f2a7f68b2a977778a358a72 *R/vcexample.R
 9067552022a194bf8d71b6f74ccb1513 *inst/NEWS.Rd
 679bc3efd48e8ed815b806eb79ac65ed *inst/doc/vcpen.R
 746c19766b2a954f8fb3431de9fbc5a6 *inst/doc/vcpen.Rmd
-f8a9aa7ef60bab67854c674629d17753 *inst/doc/vcpen.html
+8b7829f8eec411e479b158909145a38c *inst/doc/vcpen.html
 1f1c72d046a120a485e88455298ddf4f *man/kernel_linear.Rd
 ce3d552deeafd5744f3b1df6dd293922 *man/minque.Rd
 af3463217d68743a387541902b65ad7c *man/vcexample.Rd
@@ -20,7 +20,7 @@ af3463217d68743a387541902b65ad7c *man/vcexample.Rd
 a73031cbe7d6aaf0bd22e20f6526977d *src/Makevars.win
 19e312dc163564064d89b0550d724ca7 *src/RcppExports.cpp
 1da3654a8c99a68e3e3269bbcfc50c1a *src/minque_Rcpp.cpp
-cddf2f3cc5bdc739952f8f0b9bb5b1eb *src/vcpen.cpp
+02f0baed6993393207004e99f1cfc452 *src/vcpen.cpp
 6896e4dbdae58c91e927b42d4f120cc5 *tests/testthat.R
 2a2c345608c225016cf8da0d7638bc91 *tests/testthat/prefit_minque.rds
 0a1a57470b7cef631de8528511754442 *tests/testthat/test_minque.R

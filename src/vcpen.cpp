@@ -900,11 +900,10 @@ DJS: return  L * diag(sqrt(D))
 
 */
 
-  
   double EPSILON = 0.000000001;     /* <= EPS is considered a zero */
     
-  register double temp;
-  register int  i,j,k;
+  double temp;   /* took out register definition from original code from Terry */
+  int  i,j,k;
   double eps, pivot;
   int rank;
   int n =  matrix.n_rows;
@@ -950,13 +949,13 @@ DJS: return  L * diag(sqrt(D))
 
 
 arma::mat gchol_inv(arma::mat matrix) {
-  // find inversse of lower triangular matrix that
+  // find inverse of lower triangular matrix that
   // is a generalized cholesky  L * diag(sqrt(D))
 
   int n = matrix.n_rows;
   arma::mat inv = matrix;
 
-  register int i,j,k;
+  int i,j,k;
   double diag;
 
   for (k=0; k<n; k++){

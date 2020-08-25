@@ -293,17 +293,17 @@ ls()
 
 <p>The  example below illustrates how to loop over groups (indicated by doseinfo) to create linear kernel matrices for each group. Note that the  number of variance components is the number of groups plus 1, because the last group is for the residual variance component, which will have a kernel matrix that is the identity matrix. </p>
 
-<pre><code class="r">nvc &lt;- 1+length(unique(doseinfo[,2]))
+<pre><code class="r">nvc &lt;- 1 + length(unique(doseinfo[, 2]))
 id &lt;- 1:nrow(dose)
 
 ## vcs for genetic kernel matrices
-Kerns &lt;- vector(&quot;list&quot;, length=nvc)
-for(i in 1:(nvc-1)){
-  ## below uses kernel_linear, but users can replace this with their choice of function to 
-  ## create other types of kernel matrices.
-  Kerns[[i]] &lt;- kernel_linear(dose[,grep(i, doseinfo[,2])])
-  rownames(Kerns[[i]]) &lt;- id
-  colnames(Kerns[[i]]) &lt;- id  
+Kerns &lt;- vector(&quot;list&quot;, length = nvc)
+for (i in 1:(nvc - 1)) {
+    ## below uses kernel_linear, but users can replace this with their choice of
+    ## function to create other types of kernel matrices.
+    Kerns[[i]] &lt;- kernel_linear(dose[, grep(i, doseinfo[, 2])])
+    rownames(Kerns[[i]]) &lt;- id
+    colnames(Kerns[[i]]) &lt;- id
 }
 ## vc for residual variance requires identity matrix
 Kerns[[nvc]] &lt;- diag(nrow(dose))
@@ -317,7 +317,7 @@ colnames(Kerns[[nvc]]) &lt;- id
 
 <p>Run with default settings, which uses <code>minque()</code> to estimate initial values for variance components and default <code>frac1=0.8</code>.</p>
 
-<pre><code class="r">fit  &lt;- vcpen(response, covmat, Kerns)
+<pre><code class="r">fit &lt;- vcpen(response, covmat, Kerns)
 summary(fit)
 </code></pre>
 
@@ -367,7 +367,7 @@ VC estimates:
 
 <p>Perform the same run as above, but with lower penalty fraction.</p>
 
-<pre><code class="r">fit.frac1  &lt;- vcpen(response, covmat, Kerns, frac1 = .1)
+<pre><code class="r">fit.frac1 &lt;- vcpen(response, covmat, Kerns, frac1 = 0.1)
 summary(fit.frac1)
 </code></pre>
 
@@ -417,7 +417,7 @@ VC estimates:
 
 <p>This demonstrates how users can use <code>minque()</code> as a general approach to approximate REML variance components. Increasing <code>n.iter</code> will cause the resulting variance components to be closer to the fully interative REML estimates.</p>
 
-<pre><code class="r">vcinit &lt;- minque(response, covmat, Kerns, n.iter=2)
+<pre><code class="r">vcinit &lt;- minque(response, covmat, Kerns, n.iter = 2)
 names(vcinit)
 </code></pre>
 
