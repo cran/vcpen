@@ -87,16 +87,19 @@ vcpen <- function(y, X, Kerns, frac1=0.8, lambda_factor=NULL, lambda_grid=NULL,
   ## define eps for deciding non-zero VCs
   eps <- .001
   npar <- apply(fit$vc_grid[,-1] >  eps, 1, sum) + apply(abs(fit$beta_grid) > eps, 2, sum)
-  bic_grid <- as.vector(-2*fit$logl_grid+ log(fit$n_subj)*npar)
-
+ 
+  #bic_grid <- as.vector(-2*fit$logl_grid+ log(fit$n_subj)*npar)
+  bic_grid <- as.numeric(-2*fit$logl_grid + log(fit$n_subj)*npar)
+    
   index <- 1:length(bic_grid)
   ## if ties, choose bic with larger lambda penalty
   is.min.bic <- bic_grid == min(bic_grid)
   index <- index[is.min.bic][1]
-    
-  fit$vc <-  as.vector(fit$vc_grid[index,-1])
+  ## JPS 2021/12: add drop=FALSE to keep same behavior of as.vector()
+  ## but named vector might be better in next update
+  fit$vc <-  fit$vc_grid[index,-1, drop=FALSE]
 
-  fit$beta <- as.vector(fit$beta_grid[, index])
+  fit$beta <- fit$beta_grid[, index, drop=TRUE]
   
   fit$grid_info <- data.frame(lambda = fit$lambda_grid, iter=fit$iter+1,
                           logl=fit$logl_grid, loglpen=fit$logllasso_grid,

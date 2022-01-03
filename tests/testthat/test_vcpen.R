@@ -1,5 +1,9 @@
 ## Tests for vcpen
 
+if(0) {
+    rfiles <- list.files("../../R", )
+    for(rf in rfiles) source(paste0("../../R/",rf))
+}
 
 context("Testing the vcpen output")
 
@@ -26,7 +30,7 @@ vcfit  <- vcpen(response, covmat, Kerns, frac1 = .6)
 ###########################################################################################################
 #### Basic functionality
 ###########################################################################################################
-
+1
 test_that("Basic vcpen", {
   expect_equal(vcfit$beta.grid, expected=vcfit.save$beta.grid, tolerance=1e-4)
   expect_equal(vcfit$vc_grid, expected=vcfit.save$vc_grid, tolerance=1e-2)

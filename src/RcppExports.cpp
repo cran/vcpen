@@ -6,6 +6,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // minque_Rcpp
 List minque_Rcpp(arma::vec& y, arma::mat& X, const List& Kerns, arma::vec vc);
 RcppExport SEXP _vcpen_minque_Rcpp(SEXP ySEXP, SEXP XSEXP, SEXP KernsSEXP, SEXP vcSEXP) {
